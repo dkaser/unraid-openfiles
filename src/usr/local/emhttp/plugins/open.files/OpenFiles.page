@@ -4,7 +4,7 @@ Title="Open Files"
 Icon="folder-open"
 Tabs="true"
 ---
-<?PHP
+<?php
 /* Copyright 2015-2025, Dan Landon.
  *
  * This program is free software; you can redistribute it and/or
@@ -15,12 +15,12 @@ Tabs="true"
  * all copies or substantial portions of the Software.
  */
 
-/* Define our plugin name. */
+// Define our plugin name.
 define('OPEN_FILES_PLUGIN', 'open.files');
 
-/* Define the docroot path. */
-if (!defined('DOCROOT')) {
-	define('DOCROOT', $_SERVER['DOCUMENT_ROOT'] ?: '/usr/local/emhttp');
+// Define the docroot path.
+if ( ! defined('DOCROOT')) {
+    define('DOCROOT', $_SERVER['DOCUMENT_ROOT'] ?: '/usr/local/emhttp');
 }
 ?>
 

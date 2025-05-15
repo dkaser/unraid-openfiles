@@ -1,0 +1,9 @@
+                |-----handy-ruler------------------------------------------------------|
+unraid-openfiles: unraid-openfiles
+unraid-openfiles:
+unraid-openfiles: Shows files that are open that could prevent a clean shutdown of the
+unraid-openfiles: array and lets you kill those tasks.
+unraid-openfiles: 
+unraid-openfiles:
+unraid-openfiles: https://github.com/dkaser/unraid-openfiles
+unraid-openfiles:
