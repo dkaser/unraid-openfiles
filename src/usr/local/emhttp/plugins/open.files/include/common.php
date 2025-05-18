@@ -1,11 +1,6 @@
-Menu="SystemInformation"
-Type="xmenu"
-Title="Open Files"
-Icon="folder-open"
-Tabs="true"
-Markdown="false"
----
 <?php
+
+namespace OpenFiles;
 
 /*
     Copyright (C) 2025  Derek Kaser
@@ -24,11 +19,12 @@ Markdown="false"
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-try {
-    $docroot = $docroot ?? $_SERVER['DOCUMENT_ROOT'] ?: '/usr/local/emhttp';
-    require_once "{$docroot}/plugins/open.files/include/page.php";
+define(__NAMESPACE__ . "\PLUGIN_ROOT", dirname(dirname(__FILE__)));
 
-    echo OpenFiles\getPage("OpenFiles", true, array("resize" => $display['resize'] ?? false, "theme" => $theme ?? ""));
-} catch (Throwable $e) {
-    echo "An error occurred: <pre>" . print_r($e, true) . "</pre>";
+foreach (glob(PLUGIN_ROOT . "/include/" . __NAMESPACE__ . "/*.php") ?: array() as $file) {
+    try {
+        require $file;
+    } catch (\Throwable $e) {
+        Utils::logmsg("Caught exception in {$file} : " . $e->getMessage());
+    }
 }

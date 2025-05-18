@@ -1,0 +1,19 @@
+{
+    "notes": "Notes",
+    "bash": "An entry for 'bash' means you have a terminal session open with the working directory on the array.",
+    "smbd": "If 'smbd' is listed, it means that another computer has a samba share mounted. Files open by Samba usually won't prevent array shutdown",
+    "process": "Process",
+    "pid": "Process ID",
+    "kill_process": "Kill Process",
+    "open": "Open",
+    "prevent_shutdown": "May prevent shutdown",
+    "path": "File name and path",
+    "refresh": "Refresh",
+    "done": "Done",
+    "enable_kill": "Enable Kill Button",
+    "kill_process_desc": "Kill this Process holding files open",
+    "kill": "Kill",
+    "no_open": "No open files",
+    "timed_out": "Command timed out",
+    "timed_out_desc": "Cannot get list of open files"
+}

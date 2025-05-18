@@ -1,11 +1,6 @@
-Menu="SystemInformation"
-Type="xmenu"
-Title="Open Files"
-Icon="folder-open"
-Tabs="true"
-Markdown="false"
----
 <?php
+
+namespace OpenFiles;
 
 /*
     Copyright (C) 2025  Derek Kaser
@@ -24,11 +19,23 @@ Markdown="false"
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-try {
-    $docroot = $docroot ?? $_SERVER['DOCUMENT_ROOT'] ?: '/usr/local/emhttp';
-    require_once "{$docroot}/plugins/open.files/include/page.php";
+class Utils
+{
+    public static function logmsg(string $message): void
+    {
+        $timestamp = date('Y/m/d H:i:s');
+        $filename  = basename(is_string($_SERVER['PHP_SELF']) ? $_SERVER['PHP_SELF'] : "");
+        file_put_contents("/var/log/openfiles.log", "{$timestamp} {$filename}: {$message}" . PHP_EOL, FILE_APPEND);
+    }
 
-    echo OpenFiles\getPage("OpenFiles", true, array("resize" => $display['resize'] ?? false, "theme" => $theme ?? ""));
-} catch (Throwable $e) {
-    echo "An error occurred: <pre>" . print_r($e, true) . "</pre>";
+    public static function auto_v(string $file): string
+    {
+        global $docroot;
+        $path = $docroot . $file;
+        clearstatcache(true, $path);
+        $time    = file_exists($path) ? filemtime($path) : 'autov_fileDoesntExist';
+        $newFile = "{$file}?v=" . $time;
+
+        return $newFile;
+    }
 }
