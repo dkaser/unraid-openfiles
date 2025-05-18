@@ -44,8 +44,6 @@ function includePage(string $filename, array $params = array()): string
 {
     extract($params);
 
-    $includeRoot = dirname(__FILE__);
-
     if (is_file($filename)) {
         ob_start();
         include $filename;
