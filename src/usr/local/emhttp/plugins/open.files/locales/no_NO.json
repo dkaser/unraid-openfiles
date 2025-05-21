@@ -1,0 +1,19 @@
+{
+    "notes": "Notater",
+    "bash": "En oppføring for 'bash' betyr at du har en terminalsesjon åpen med arbeidskatalogen på arrayet.",
+    "smbd": "Hvis 'smbd' er oppført, betyr det at en annen datamaskin har en samba-deling montert. Filer åpnet via Samba vil vanligvis ikke hindre nedstenging av arrayet.",
+    "process": "Prosess",
+    "pid": "Prosess-ID",
+    "kill_process": "Avslutt prosess",
+    "open": "Åpne",
+    "prevent_shutdown": "Kan hindre nedstenging",
+    "path": "Filnavn og sti",
+    "refresh": "Oppdater",
+    "done": "Ferdig",
+    "enable_kill": "Aktiver avslutt-knapp",
+    "kill_process_desc": "Avslutt denne prosessen som holder filer åpne",
+    "kill": "Avslutt",
+    "no_open": "Ingen åpne filer",
+    "timed_out": "Kommandoen utløp på tid",
+    "timed_out_desc": "Kan ikke hente liste over åpne filer"
+}

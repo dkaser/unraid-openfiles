@@ -1,0 +1,19 @@
+{
+    "notes": "Notizen",
+    "bash": "Ein Eintrag für 'bash' bedeutet, dass Sie eine Terminal-Sitzung mit dem Arbeitsverzeichnis auf dem Array geöffnet haben.",
+    "smbd": "Wenn 'smbd' aufgeführt ist, bedeutet dies, dass ein anderer Computer eine Samba-Freigabe eingebunden hat. Von Samba geöffnete Dateien verhindern normalerweise nicht das Herunterfahren des Arrays.",
+    "process": "Prozess",
+    "pid": "Prozess-ID",
+    "kill_process": "Prozess beenden",
+    "open": "Öffnen",
+    "prevent_shutdown": "Kann das Herunterfahren verhindern",
+    "path": "Dateiname und Pfad",
+    "refresh": "Aktualisieren",
+    "done": "Fertig",
+    "enable_kill": "Kill-Schaltfläche aktivieren",
+    "kill_process_desc": "Diesen Prozess beenden, der Dateien offen hält",
+    "kill": "Beenden",
+    "no_open": "Keine offenen Dateien",
+    "timed_out": "Befehl hat die Zeitüberschreitung erreicht",
+    "timed_out_desc": "Liste der offenen Dateien kann nicht abgerufen werden"
+}

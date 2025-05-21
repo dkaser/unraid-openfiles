@@ -1,0 +1,19 @@
+{
+    "notes": "Note",
+    "bash": "Una voce per 'bash' significa che hai una sessione terminale aperta con la directory di lavoro sull'array.",
+    "smbd": "Se viene visualizzato 'smbd', significa che un altro computer ha montato una condivisione Samba. I file aperti tramite Samba di solito non impediscono l'arresto dell'array",
+    "process": "Processo",
+    "pid": "ID Processo",
+    "kill_process": "Termina Processo",
+    "open": "Apri",
+    "prevent_shutdown": "Può impedire l'arresto",
+    "path": "Nome file e percorso",
+    "refresh": "Aggiorna",
+    "done": "Fatto",
+    "enable_kill": "Abilita pulsante Termina",
+    "kill_process_desc": "Termina questo processo che mantiene i file aperti",
+    "kill": "Termina",
+    "no_open": "Nessun file aperto",
+    "timed_out": "Comando scaduto",
+    "timed_out_desc": "Impossibile ottenere l'elenco dei file aperti"
+}

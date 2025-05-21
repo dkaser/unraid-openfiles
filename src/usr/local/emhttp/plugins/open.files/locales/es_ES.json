@@ -1,0 +1,19 @@
+{
+    "notes": "Notas",
+    "bash": "Una entrada para 'bash' significa que tienes una sesión de terminal abierta con el directorio de trabajo en la matriz.",
+    "smbd": "Si 'smbd' está listado, significa que otra computadora tiene un recurso samba montado. Los archivos abiertos por Samba generalmente no evitarán el cierre de la matriz",
+    "process": "Proceso",
+    "pid": "ID del Proceso",
+    "kill_process": "Eliminar Proceso",
+    "open": "Abrir",
+    "prevent_shutdown": "Puede evitar el cierre",
+    "path": "Nombre y ruta del archivo",
+    "refresh": "Actualizar",
+    "done": "Atrás",
+    "enable_kill": "Habilitar Botón de Eliminar",
+    "kill_process_desc": "Eliminar este Proceso que tiene archivos abiertos",
+    "kill": "Eliminar",
+    "no_open": "No hay archivos abiertos",
+    "timed_out": "El comando ha agotado el tiempo",
+    "timed_out_desc": "No se puede obtener la lista de archivos abiertos"
+}

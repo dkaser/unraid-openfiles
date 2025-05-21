@@ -1,0 +1,19 @@
+{
+    "notes": "Notatki",
+    "bash": "Wpis dotyczący 'bash' oznacza, że masz otwartą sesję terminalową z katalogiem roboczym na macierzy.",
+    "smbd": "Jeśli widnieje 'smbd', oznacza to, że inny komputer ma zamontowany udział samba. Pliki otwarte przez Samba zwykle nie blokują wyłączenia macierzy",
+    "process": "Proces",
+    "pid": "ID procesu",
+    "kill_process": "Zakończ proces",
+    "open": "Otwórz",
+    "prevent_shutdown": "Może uniemożliwić zamknięcie",
+    "path": "Nazwa i ścieżka pliku",
+    "refresh": "Odśwież",
+    "done": "Gotowe",
+    "enable_kill": "Włącz przycisk Zabij",
+    "kill_process_desc": "Zatrzymaj ten proces utrzymujący pliki otwarte",
+    "kill": "Zakończ",
+    "no_open": "Brak otwartych plików",
+    "timed_out": "Polecenie przekroczyło limit czasu",
+    "timed_out_desc": "Nie można pobrać listy otwartych plików"
+}

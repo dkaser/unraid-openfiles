@@ -1,0 +1,19 @@
+{
+    "notes": "备注",
+    "bash": "“bash” 的条目表示您有一个终端会话正以阵列为工作目录打开。",
+    "smbd": "如果显示了 “smbd”，则表示另一台计算机已挂载了 Samba 共享。Samba 打开的文件通常不会阻止阵列关机",
+    "process": "进程",
+    "pid": "进程 ID",
+    "kill_process": "终止进程",
+    "open": "打开",
+    "prevent_shutdown": "可能阻止关机",
+    "path": "文件名及路径",
+    "refresh": "刷新",
+    "done": "完成",
+    "enable_kill": "启用终止按钮",
+    "kill_process_desc": "终止此占用文件的进程",
+    "kill": "终止",
+    "no_open": "没有打开的文件",
+    "timed_out": "命令超时",
+    "timed_out_desc": "无法获取打开文件列表"
+}

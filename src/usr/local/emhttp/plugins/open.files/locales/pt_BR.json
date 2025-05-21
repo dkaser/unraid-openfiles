@@ -1,0 +1,19 @@
+{
+    "notes": "Notas",
+    "bash": "Uma entrada para 'bash' significa que você tem uma sessão de terminal aberta com o diretório de trabalho no array.",
+    "smbd": "Se 'smbd' estiver listado, significa que outro computador montou um compartilhamento samba. Arquivos abertos pelo Samba geralmente não impedem o desligamento do array",
+    "process": "Processo",
+    "pid": "ID do Processo",
+    "kill_process": "Encerrar Processo",
+    "open": "Abrir",
+    "prevent_shutdown": "Pode impedir o desligamento",
+    "path": "Nome e caminho do arquivo",
+    "refresh": "Atualizar",
+    "done": "Concluído",
+    "enable_kill": "Habilitar botão Encerrar",
+    "kill_process_desc": "Encerrar este processo que está mantendo arquivos abertos",
+    "kill": "Encerrar",
+    "no_open": "Nenhum arquivo aberto",
+    "timed_out": "Comando expirou",
+    "timed_out_desc": "Não foi possível obter a lista de arquivos abertos"
+}

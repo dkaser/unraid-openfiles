@@ -1,0 +1,19 @@
+{
+    "notes": "Notities",
+    "bash": "Een item voor 'bash' betekent dat je een terminalsessie hebt geopend met de werkmap op de array.",
+    "smbd": "Als 'smbd' wordt vermeld, betekent dit dat een andere computer een samba-share heeft gekoppeld. Door Samba geopende bestanden voorkomen meestal niet dat de array wordt afgesloten",
+    "process": "Proces",
+    "pid": "Proces-ID",
+    "kill_process": "Proces beëindigen",
+    "open": "Openen",
+    "prevent_shutdown": "Kan afsluiten voorkomen",
+    "path": "Bestandsnaam en pad",
+    "refresh": "Vernieuwen",
+    "done": "Gereed",
+    "enable_kill": "Knop \"Beëindigen\" inschakelen",
+    "kill_process_desc": "Beëindig dit proces dat bestanden openhoudt",
+    "kill": "Beëindigen",
+    "no_open": "Geen open bestanden",
+    "timed_out": "Opdracht time-out",
+    "timed_out_desc": "Kan de lijst met open bestanden niet ophalen"
+}

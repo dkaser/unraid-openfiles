@@ -1,0 +1,19 @@
+{
+    "notes": "Anteckningar",
+    "bash": "En post för 'bash' betyder att du har en terminalsession öppen med arbetskatalogen på arrayen.",
+    "smbd": "Om 'smbd' är listad betyder det att en annan dator har en samba-delning monterad. Filer som är öppna av Samba brukar vanligtvis inte förhindra att arrayen stängs av",
+    "process": "Process",
+    "pid": "Process-ID",
+    "kill_process": "Avsluta process",
+    "open": "Öppna",
+    "prevent_shutdown": "Kan förhindra avstängning",
+    "path": "Filnamn och sökväg",
+    "refresh": "Uppdatera",
+    "done": "Klar",
+    "enable_kill": "Aktivera avslutningsknapp",
+    "kill_process_desc": "Döda denna process som håller filer öppna",
+    "kill": "Avsluta",
+    "no_open": "Inga öppna filer",
+    "timed_out": "Kommandot tog för lång tid",
+    "timed_out_desc": "Kan inte hämta lista över öppna filer"
+}

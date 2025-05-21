@@ -1,0 +1,19 @@
+{
+    "notes": "Notes",
+    "bash": "Une entrée pour 'bash' signifie que vous avez une session de terminal ouverte avec le répertoire de travail sur l'ensemble.",
+    "smbd": "Si 'smbd' est listé, cela signifie qu'un autre ordinateur a un partage Samba monté. Les fichiers ouverts par Samba n'empêchent généralement pas l'arrêt de l'ensemble.",
+    "process": "Processus",
+    "pid": "Identifiant du processus",
+    "kill_process": "Arrêter le processus",
+    "open": "Ouvrir",
+    "prevent_shutdown": "Peut empêcher l'arrêt",
+    "path": "Nom et chemin du fichier",
+    "refresh": "Rafraîchir",
+    "done": "Terminé",
+    "enable_kill": "Activer le bouton d'arrêt",
+    "kill_process_desc": "Arrêter ce processus qui garde des fichiers ouverts",
+    "kill": "Arrêter",
+    "no_open": "Aucun fichier ouvert",
+    "timed_out": "Commande expirée",
+    "timed_out_desc": "Impossible d'obtenir la liste des fichiers ouverts"
+}
