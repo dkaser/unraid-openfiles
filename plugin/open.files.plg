@@ -4,7 +4,7 @@
 <PLUGIN 
   name="open.files"
   author="Derek Kaser"
-  version="2025.05.14"
+  version="2025.05.21"
   launch="Tools/OpenFiles"
   pluginURL="https://raw.githubusercontent.com/dkaser/unraid-openfiles/main/plugin/open.files.plg"
   support="https://forums.unraid.net/topic/41196-open-files-plugin-can-help-with-troubleshooting-why-server-wont-shut-down/"
@@ -14,16 +14,18 @@
 
 <CHANGES>
 <![CDATA[
-###2025.05.14###
-- Migration to new repo
+###2025.05.21###
+- Various bug fixes
+- Add localization files
+- Add optional usage reporting
 
 For older releases, see https://github.com/dkaser/unraid-openfiles/releases
 ]]>
 </CHANGES>
 
-<FILE Name="/boot/config/plugins/open.files/unraid-openfiles-2025.05.14-noarch-1.txz">
-<URL>https://github.com/dkaser/unraid-openfiles/releases/download/2025.05.14/unraid-openfiles-2025.05.14-noarch-1.txz</URL>
-<SHA256>1f03c8ae45b7ea96b4b956e947e4ba801061af26f3e6a3df49dd61ee5430c523</SHA256>
+<FILE Name="/boot/config/plugins/open.files/unraid-openfiles-2025.05.21-noarch-1.txz">
+<URL>https://github.com/dkaser/unraid-openfiles/releases/download/2025.05.21/unraid-openfiles-2025.05.21-noarch-1.txz</URL>
+<SHA256>038449a0c85a73ae00bd2012f1a87843db664c969189a7861144db666a8df428</SHA256>
 </FILE>
 
 <!--
@@ -32,15 +34,17 @@ The 'install' script.
 <FILE Run="/bin/bash">
 <INLINE>
 <![CDATA[
-upgradepkg --install-new /boot/config/plugins/open.files/unraid-openfiles-2025.05.14-noarch-1.txz
+upgradepkg --install-new /boot/config/plugins/open.files/unraid-openfiles-2025.05.21-noarch-1.txz
 
 # cleanup old versions
-rm -f $(ls /boot/config/plugins/open.files/unraid-openfiles-*.txz 2>/dev/null | grep -v '2025.05.14')
+rm -f $(ls /boot/config/plugins/open.files/unraid-openfiles-*.txz 2>/dev/null | grep -v '2025.05.21')
+
+echo "VERSION=2025.05.21" > /usr/local/emhttp/plugins/open.files/version.ini
 
 echo ""
 echo "----------------------------------------------------"
 echo " open.files has been installed."
-echo " Version: 2025.05.14"
+echo " Version: 2025.05.21"
 echo "----------------------------------------------------"
 echo ""
 ]]>
