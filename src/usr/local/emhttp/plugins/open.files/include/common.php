@@ -20,6 +20,7 @@ namespace OpenFiles;
 */
 
 define(__NAMESPACE__ . "\PLUGIN_ROOT", dirname(dirname(__FILE__)));
+define(__NAMESPACE__ . "\PLUGIN_NAME", "open.files");
 
 foreach (glob(PLUGIN_ROOT . "/include/" . __NAMESPACE__ . "/*.php") ?: array() as $file) {
     try {
