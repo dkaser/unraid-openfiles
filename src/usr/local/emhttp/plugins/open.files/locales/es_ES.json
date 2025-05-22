@@ -15,5 +15,13 @@
     "kill": "Eliminar",
     "no_open": "No hay archivos abiertos",
     "timed_out": "El comando ha agotado el tiempo",
-    "timed_out_desc": "No se puede obtener la lista de archivos abiertos"
+    "timed_out_desc": "No se puede obtener la lista de archivos abiertos",
+    "yes": "Sí",
+    "no": "No",
+    "apply": "Aplicar",
+    "metrics": {
+        "metrics": "Datos de uso",
+        "usage": "Permitir recolección de datos de uso",
+        "desc": "Permite la recolección de datos de uso. Esto envía un identificador anónimo, la versión actual de Unraid, la versión actual del plugin y el estado habilitado/desactivado de algunas características. No se recopila información personal ni de red."
+    }
 }

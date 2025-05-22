@@ -15,5 +15,13 @@
     "kill": "Termina",
     "no_open": "Nessun file aperto",
     "timed_out": "Comando scaduto",
-    "timed_out_desc": "Impossibile ottenere l'elenco dei file aperti"
+    "timed_out_desc": "Impossibile ottenere l'elenco dei file aperti",
+    "yes": "Sì",
+    "no": "No",
+    "apply": "Applica",
+    "metrics": {
+        "metrics": "Dati di utilizzo",
+        "usage": "Consenti raccolta dati di utilizzo",
+        "desc": "Consente la raccolta di dati di utilizzo. Invia un identificativo anonimizzato, la versione attuale di Unraid, la versione attuale del plugin e lo stato abilitato/disabilitato di alcune funzionalità. Nessuna informazione personale o di rete sarà raccolta."
+    }
 }

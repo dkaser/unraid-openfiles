@@ -15,5 +15,13 @@
     "kill": "Beëindigen",
     "no_open": "Geen open bestanden",
     "timed_out": "Opdracht time-out",
-    "timed_out_desc": "Kan de lijst met open bestanden niet ophalen"
+    "timed_out_desc": "Kan de lijst met open bestanden niet ophalen",
+    "yes": "Ja",
+    "no": "Nee",
+    "apply": "Toepassen",
+    "metrics": {
+        "metrics": "Gebruiksgegevens",
+        "usage": "Verzamelen van verbruiksgegevens toestaan",
+        "desc": "Staat het verzamelen van gebruiksgegevens toe. Dit stuurt een geanonimiseerde identificatie, de huidige Unraid-versie, de huidige versie van de plugin en de in- of uitgeschakelde status van enkele functies. Er worden geen persoonlijke of netwerkgegevens verzameld."
+    }
 }

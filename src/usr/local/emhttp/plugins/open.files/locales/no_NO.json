@@ -15,5 +15,13 @@
     "kill": "Avslutt",
     "no_open": "Ingen åpne filer",
     "timed_out": "Kommandoen utløp på tid",
-    "timed_out_desc": "Kan ikke hente liste over åpne filer"
+    "timed_out_desc": "Kan ikke hente liste over åpne filer",
+    "yes": "Ja",
+    "no": "Nei",
+    "apply": "Bruk",
+    "metrics": {
+        "metrics": "Bruksdata",
+        "usage": "Tillat innsamling av bruksdata",
+        "desc": "Tillater innsamling av bruksdata. Dette sender en anonymisert identifikator, nåværende Unraid-versjon, nåværende versjon av pluginet, og aktivert/deaktivert-status for noen funksjoner. Ingen personlig eller nettverksinformasjon innhentes."
+    }
 }

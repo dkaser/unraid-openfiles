@@ -15,5 +15,13 @@
     "kill": "Zakończ",
     "no_open": "Brak otwartych plików",
     "timed_out": "Polecenie przekroczyło limit czasu",
-    "timed_out_desc": "Nie można pobrać listy otwartych plików"
+    "timed_out_desc": "Nie można pobrać listy otwartych plików",
+    "yes": "Tak",
+    "no": "Nie",
+    "apply": "Zastosuj",
+    "metrics": {
+        "metrics": "Dane dotyczące użycia",
+        "usage": "Zezwól na zbieranie danych o użytkowaniu",
+        "desc": "Pozwala na zbieranie danych dotyczących użycia. Wysyłany jest zanonimizowany identyfikator, aktualna wersja Unraid, aktualna wersja wtyczki oraz status włączenia/wyłączenia niektórych funkcji. Nie są zbierane żadne informacje osobiste ani dotyczące sieci."
+    }
 }
