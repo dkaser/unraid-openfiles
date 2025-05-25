@@ -29,35 +29,35 @@ if ($modal_displayed === "yes") {
 ?>
 
 <script>
-if ($.cookie('dwsnapwarning')===undefined) {
-        swal({
-            title: "<?= $tr->tr("metrics.metrics"); ?>",
-            text: "<?= $tr->tr("metrics.modal"); ?>",
-            type: "info",
-            confirmButtonText: "Agree",
-            showCancelButton: true,
-            cancelButtonText: "Decline",
-            html: true
-            },
-            function(isConfirmed){
-                if (isConfirmed) {
-                    // User agreed, submit the form to allow usage.
-                    document.acceptMetrics.submit();
-                } else {
-                    // User declined, submit the form to deny usage.
-                    document.denyMetrics.submit();
-                }
-            });
-    }
+    swal({
+        title: "<?= $tr->tr("metrics.metrics"); ?>",
+        text: "<?= $tr->tr("metrics.modal"); ?>",
+        type: "info",
+        confirmButtonText: "Agree",
+        showCancelButton: true,
+        cancelButtonText: "Decline",
+        html: true
+        },
+        function(isConfirmed){
+            if (isConfirmed) {
+                // User agreed, submit the form to allow usage.
+                let form = document.getElementById("acceptMetrics");
+                form.submit();
+            } else {
+                // User declined, submit the form to deny usage.
+                let form = document.getElementById("denyMetrics");
+                form.submit();
+            }
+        });
 </script>
 
-<form method="POST" name="acceptMetrics" action="/update.php" target="progressFrame">
+<form method="POST" name="acceptMetrics" id="acceptMetrics" action="/update.php" target="progressFrame">
 <input type="hidden" name="#file" value="/boot/config/plugins/<?= PLUGIN_NAME; ?>/usage.cfg">
 <input type="hidden" name="usage_allowed" value="yes">
 <input type="hidden" name="modal_displayed" value="yes">
 </form>
 
-<form method="POST" name="denyMetrics" action="/update.php" target="progressFrame">
+<form method="POST" name="denyMetrics" id="denyMetrics" action="/update.php" target="progressFrame">
 <input type="hidden" name="#file" value="/boot/config/plugins/<?= PLUGIN_NAME; ?>/usage.cfg">
 <input type="hidden" name="usage_allowed" value="no">
 <input type="hidden" name="modal_displayed" value="yes">
