@@ -88,10 +88,11 @@ switch ($_POST['action']) {
 
             $bb = "";
             foreach ($pnum as $pp) {
-                $ss = $flist[$pnum[$pp]][0];
-                $bb = "<input title='" . $tr->tr('enable_kill') . ".' type='checkbox' onclick='$(\"#kill_button{$pnum[$pp]}\").prop(\"disabled\",!this.checked);'>";
+                $ss    = $flist[$pnum[$pp]][0];
+                $block = ($blocking[$pp] > 0) ? $tr->tr('yes') : $tr->tr('no');
+                $bb    = "<input title='" . $tr->tr('enable_kill') . ".' type='checkbox' onclick='$(\"#kill_button{$pnum[$pp]}\").prop(\"disabled\",!this.checked);'>";
                 $bb     .= "<button class='kill-button' title='" . $tr->tr('kill_process_desc') . ".' id='kill_button{$pnum[$pp]}' disabled onclick='openBox(\"/plugins/open.files/scripts/killprocess&arg1={$pnum[$pp]}\",\"Kill Process\",450,450,true)'>" . $tr->tr('kill') . "</button>";
-                $return .= "<tr><td>{$prog[$pp]}</td><td>{$pnum[$pp]}</td><td>{$bb}</td><td>{$count[$pp]}</td><td>{$blocking[$pp]}</td>";
+                $return .= "<tr><td>{$prog[$pp]}</td><td>{$pnum[$pp]}</td><td>{$bb}</td><td>{$count[$pp]}</td><td>{$block}</td>";
 
                 $truncate = 80;
                 $trim     = 40;

@@ -1,39 +1,8 @@
 /* CSS for table styling */
-table.open-files {
-    padding: 0;
-    border-collapse: collapse;
-    white-space: nowrap;
+.tablesorter .filtered {
+    display: none;
 }
 
-/* Header cell styling */
-table.open-files thead tr > th {
-    text-align: left;
-}
-
-table.open-files thead tr > th + th {
-    text-align: center;
-}
-
-table.open-files thead tr > th + th + th + th + th + th {
-    text-align: left;
-    min-width: 130px;
-}
-
-/* Table cell styling */
-table.open-files tr > td {
-    text-align: left;
-}
-
-table.open-files tr > td + td  {
-    text-align: center;
-}
-
-table.open-files tr > td + td + td + td + td + td {
-    text-align: left;
-    min-width: 130px;
-}
-
-/* Style for the disabled kill button */
-button.kill-button:disabled {
-	opacity:0.5
+.tablesorter-filter.disabled {
+    display: none;
 }

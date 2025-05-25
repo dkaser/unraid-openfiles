@@ -18,13 +18,33 @@ if ( ! defined(__NAMESPACE__ . '\PLUGIN_NAME')) {
     throw new \RuntimeException("PLUGIN_NAME not defined");
 }
 
+$usage_cfg     = parse_ini_file("/boot/config/plugins/" . PLUGIN_NAME . "/usage.cfg", false, INI_SCANNER_RAW) ?: array();
+$usage_allowed = $usage_cfg['usage_allowed'] ?? "yes";
+
 ?>
+<link type="text/css" rel="stylesheet" href="/plugins/open.files/assets/open-files.css">
+<script src="/webGui/javascript/jquery.tablesorter.widgets.js"></script>
 
-<link type="text/css" rel="stylesheet" href="<?php Utils::auto_v("/plugins/open.files/assets/style-" . ($theme ?? "") . ".css");?>">
-<link type="text/css" rel="stylesheet" href="<?php Utils::auto_v("/plugins/open.files/assets/open-files.css");?>">
+<p><strong><?= $tr->tr("notes"); ?>:</strong></p>
+<ul>
+	<li><?= $tr->tr("bash"); ?></li>
+	<li><?= $tr->tr("smbd"); ?></li>
+</ul>
 
-<table class='tablesorter shift open-files' id='tblOpenFiles'>
-<thead><tr><th><?= $tr->tr("process"); ?></th><th><?= $tr->tr("pid"); ?></th><th><?= $tr->tr("kill_process"); ?></th><th><?= $tr->tr("open"); ?></th><th><?= $tr->tr("prevent_shutdown"); ?></th><th><?= $tr->tr("path"); ?></th></tr></thead>
+<input type="button" value="<?= $tr->tr("refresh"); ?>" onclick="refresh()">
+<input type="button" value="<?= $tr->tr("done"); ?>" onclick="done()">
+<style>input.disabled { display: none; }</style>
+<table class='tablesorter open-files' id='tblOpenFiles'>
+<thead>
+	<tr>
+		<th><?= $tr->tr("process"); ?></th>
+		<th><?= $tr->tr("pid"); ?></th>
+		<th class="filter-false"><?= $tr->tr("kill_process"); ?></th>
+		<th class="filter-false"><?= $tr->tr("open"); ?></th>
+		<th class="filter-select"><?= $tr->tr("prevent_shutdown"); ?></th>
+		<th><?= $tr->tr("path"); ?></th>
+	</tr>
+</thead>
 <tbody id="open-files">
 	<tr>
 		<td colspan='6'><div class='spinner'></div></td>
@@ -32,50 +52,37 @@ if ( ! defined(__NAMESPACE__ . '\PLUGIN_NAME')) {
 </tbody>
 </table>
 
-<p><strong><?= $tr->tr("notes"); ?>:</strong></p>
-<li><?= $tr->tr("bash"); ?></li>
-<li><?= $tr->tr("smbd"); ?></li>
-
-<input type="button" value="<?= $tr->tr("refresh"); ?>" onclick="refresh()">
-<input type="button" value="<?= $tr->tr("done"); ?>" onclick="done()">
-
 <script>
 /* URL for Open Files PHP file. */
 const OFURL = '/plugins/open.files/include/OpenFiles.php';
 
 function refreshPage() {
-	$.post(OFURL, {
-		'action': 'open_files',
-	}, function (data) {
+	$.post(OFURL, {'action': 'open_files',}, function (data) {
 		if (data) {
 			/* Fill the open files table. */
 			$('#open-files').html(data);
 
 			/* Set up the table sorter. */
-			$('#tblOpenFiles').tablesorter({headers:{2:{sorter:false},3:{sorter:false}}});
+			$('#tblOpenFiles').tablesorter({
+				widthFixed : true,
+				sortList: [[1,0]],
+				widgets: ['stickyHeaders','filter','zebra'],
+				widgetOptions: {
+					// on black and white, offset is height of #menu
+					// on azure and gray, offset is height of #header
+					stickyHeaders_offset: ($('#menu').height() < 50) ? $('#menu').height() : $('#header').height(),
+					filter_columnFilters: true,
+					filter_reset: '.reset',
+					filter_liveSearch: true,
+					zebra: ["normal-row","alt-row"]
+				},
+			});
 		}
 	}, 'json');
 }
 
-$(function() {
-	<?php if ($resize ?? false) { ?>
-	function resize() {
-	  $('pre.up').height(Math.max(window.innerHeight-330,370)).show();
-	}
-
-	resize();
-	$(window).bind('resize',function(){resize();});
-	<?php }?>
-
-});
-
 refreshPage();
 </script>
-
-<?php
-$usage_cfg     = parse_ini_file("/boot/config/plugins/" . PLUGIN_NAME . "/usage.cfg", false, INI_SCANNER_RAW) ?: array();
-$usage_allowed = $usage_cfg['usage_allowed'] ?? "yes";
-?>
 
 <h3><?= $tr->tr("metrics.metrics"); ?></h3>
 
