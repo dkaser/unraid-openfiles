@@ -23,7 +23,7 @@ jobs:
         uses: "php-actions/composer@v6"
         with:
           dev: no
-          working_dir: "tag/src/var/lib/php/${{ env.FILE_NAME }}"
+          working_dir: "tag/src/usr/local/php/${{ env.FILE_NAME }}"
 
       - id: build_files
         run: |
