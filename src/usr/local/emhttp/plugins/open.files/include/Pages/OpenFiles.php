@@ -1,6 +1,8 @@
 <?php
 
-namespace OpenFiles;
+namespace EDACerton\OpenFiles;
+
+use EDACerton\PluginUtils\Translator;
 
 /* Copyright 2015-2025, Dan Landon.
  *
@@ -12,7 +14,11 @@ namespace OpenFiles;
  * all copies or substantial portions of the Software.
  */
 
-$tr = $tr ?? new Translator();
+if ( ! defined(__NAMESPACE__ . '\PLUGIN_ROOT') || ! defined(__NAMESPACE__ . '\PLUGIN_NAME')) {
+    throw new \RuntimeException("Common file not loaded.");
+}
+
+$tr = $tr ?? new Translator(PLUGIN_ROOT);
 
 if ( ! defined(__NAMESPACE__ . '\PLUGIN_NAME')) {
     throw new \RuntimeException("PLUGIN_NAME not defined");

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenFiles;
+namespace EDACerton\OpenFiles;
 
 /*
     Copyright (C) 2025  Derek Kaser

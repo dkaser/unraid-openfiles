@@ -1,6 +1,8 @@
 <?php
 
-namespace OpenFiles;
+namespace EDACerton\OpenFiles;
+
+use EDACerton\PluginUtils\Translator;
 
 /* Copyright 2015-2025, Dan Landon.
  *
@@ -15,7 +17,11 @@ namespace OpenFiles;
 
 <?php
 require_once dirname(__FILE__) . "/common.php";
-$tr = $tr ?? new Translator();
+if ( ! defined(__NAMESPACE__ . '\PLUGIN_ROOT') || ! defined(__NAMESPACE__ . '\PLUGIN_NAME')) {
+    throw new \RuntimeException("Common file not loaded.");
+}
+
+$tr = $tr ?? new Translator(PLUGIN_ROOT);
 
 switch ($_POST['action']) {
     case 'open_files':
