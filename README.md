@@ -2,7 +2,7 @@ Open Files for Unraid Server
 ============================
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
-[![GitHub Releases](https://img.shields.io/github/v/release/unraid/unraid-openfiles)](https://github.com/dkaser/unraid-openfiles/releases)
+[![GitHub Releases](https://img.shields.io/github/v/release/dkaser/unraid-openfiles)](https://github.com/dkaser/unraid-openfiles/releases)
 [![Last Commit](https://img.shields.io/github/last-commit/dkaser/unraid-openfiles)](https://github.com/dkaser/unraid-openfiles/commits/main/)
 [![Code Style: PHP-CS-Fixer](https://img.shields.io/badge/code%20style-php--cs--fixer-brightgreen.svg)](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/dkaser/unraid-openfiles/total)
