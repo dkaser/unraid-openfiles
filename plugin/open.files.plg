@@ -7,7 +7,7 @@
   version="2025.05.26"
   launch="Tools/OpenFiles"
   pluginURL="https://raw.githubusercontent.com/dkaser/unraid-openfiles/main/plugin/open.files.plg"
-  support="https://forums.unraid.net/topic/41196-open-files-plugin-can-help-with-troubleshooting-why-server-wont-shut-down/"
+  support="https://forums.unraid.net/topic/191179-plugin-open-files-see-whats-preventing-unraid-from-shutting-down/"
   min="7.0.0"
   icon="folder-open"
 >
