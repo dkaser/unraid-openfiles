@@ -49,9 +49,18 @@ class LSOF
 
         // cd to /tmp or else lsof itself will show up as working dir on websserver home.
         $timeout = 30;
-        $time    = -microtime(true);
-        $res     = shell_exec("/usr/bin/timeout " . escapeshellarg((string)$timeout) . " cd /tmp;/usr/bin/lsof -F facn /mnt/* /dev/loop* /dev/md* 2>/dev/null");
-        $time += microtime(true);
+        $startTime = microtime(true);
+
+        // Build the lsof command with safe argument escaping
+        $lsofCmd = sprintf(
+            '/usr/bin/timeout %s bash -c %s',
+            escapeshellarg((string)$timeout),
+            escapeshellarg('cd /tmp; /usr/bin/lsof -F facn /mnt/* /dev/loop* /dev/md* 2>/dev/null')
+        );
+
+        $res = shell_exec($lsofCmd);
+
+        $time = microtime(true) - $startTime;
 
         $cwd = false;
 

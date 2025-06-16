@@ -45,7 +45,7 @@ class Process
             if ($cgroupContent !== false) {
                 // Extract the container ID from the cgroup file content
                 if (preg_match('/docker\/([a-z0-9]{64})/', $cgroupContent, $matches)) {
-                    $containerID = $matches[1];
+                    $containerID = escapeshellarg($matches[1]);
                     // Use the container ID to get the container name
                     $this->containerName = trim(shell_exec("docker ps --filter id={$containerID} --format '{{.Names}}'") ?: "");
                 }
