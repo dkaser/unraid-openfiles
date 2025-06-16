@@ -4,15 +4,15 @@ function toggleRow(pid) {
   if (readMoreSpan.is(":visible")) {
     readMoreSpan.hide();
     $(`#toggle-${pid}`).text(translator.tr("more"));
-    scrollTo($(`#top-${pid}`).offset().top);
+    scrollToPos($(`#top-${pid}`).offset().top);
   } else {
     readMoreSpan.show();
     $(`#toggle-${pid}`).text(translator.tr("less"));
-    scrollTo($(`#top-${pid}`).offset().top);
+    scrollToPos($(`#top-${pid}`).offset().top);
   }
 }
 
-function scrollTo(location) {
+function scrollToPos(location) {
   // Scroll to the specified location
   $([document.documentElement, document.body]).animate(
     {
