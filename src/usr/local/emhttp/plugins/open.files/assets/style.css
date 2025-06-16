@@ -49,5 +49,5 @@ input.flatpickr-input {
 
 .overflow-anywhere {
     overflow-wrap: anywhere;
-    white-space: wrap;
+    white-space: normal;
 }
