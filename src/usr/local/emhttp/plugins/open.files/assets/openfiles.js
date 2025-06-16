@@ -64,16 +64,20 @@ function getDatatableConfig(url) {
       {
         name: "files",
         data: function (row, type, val, meta) {
+          const esc = (s) => $("<div>").text(s).html();
+
           if (row.files.length < 5) {
-            return row.files.join("<br>");
+            return row.files.map(esc).join("<br>");
           } else {
             // If there are more than 4 files, show a "read more" link
             return `<span id="top-${row.PID}">${row.files
+              .map(esc)
               .slice(0, 4)
               .join("<br>")}</span>
                                 <span id="readmore-${
                                   row.PID
                                 }" style="display:none;"><br>${row.files
+              .map(esc)
               .slice(4)
               .join("<br>")}</span>
                                 <br><a href="#" id="toggle-${
