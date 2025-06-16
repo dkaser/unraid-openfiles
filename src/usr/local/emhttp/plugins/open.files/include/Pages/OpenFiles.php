@@ -20,72 +20,41 @@ if ( ! defined(__NAMESPACE__ . '\PLUGIN_ROOT') || ! defined(__NAMESPACE__ . '\PL
 
 $tr = $tr ?? new Translator(PLUGIN_ROOT);
 
-if ( ! defined(__NAMESPACE__ . '\PLUGIN_NAME')) {
-    throw new \RuntimeException("PLUGIN_NAME not defined");
-}
-
-$usage_cfg     = parse_ini_file("/boot/config/plugins/" . PLUGIN_NAME . "/usage.cfg", false, INI_SCANNER_RAW) ?: array();
-$usage_allowed = $usage_cfg['usage_allowed'] ?? "yes";
-
 ?>
-<link type="text/css" rel="stylesheet" href="/plugins/open.files/assets/open-files.css">
-<script src="/webGui/javascript/jquery.tablesorter.widgets.js"></script>
+<script src="/plugins/open.files/assets/translate.js"></script>
+<script>
+    const translator = new Translator("/plugins/open.files/");
+</script>
 
-<p><strong><?= $tr->tr("notes"); ?>:</strong></p>
-<ul>
-	<li><?= $tr->tr("bash"); ?></li>
-	<li><?= $tr->tr("smbd"); ?></li>
-</ul>
+<link type="text/css" rel="stylesheet" href="/plugins/open.files/assets/style.css">
 
-<input type="button" value="<?= $tr->tr("refresh"); ?>" onclick="refresh()">
-<input type="button" value="<?= $tr->tr("done"); ?>" onclick="done()">
-<style>input.disabled { display: none; }</style>
-<table class='tablesorter open-files' id='tblOpenFiles'>
-<thead>
-	<tr>
-		<th><?= $tr->tr("process"); ?></th>
-		<th><?= $tr->tr("pid"); ?></th>
-		<th class="filter-false"><?= $tr->tr("kill_process"); ?></th>
-		<th class="filter-false"><?= $tr->tr("open"); ?></th>
-		<th class="filter-select"><?= $tr->tr("prevent_shutdown"); ?></th>
-		<th><?= $tr->tr("path"); ?></th>
-	</tr>
-</thead>
-<tbody id="open-files">
-	<tr>
-		<td colspan='6'><div class='spinner'></div></td>
-	</tr>
-</tbody>
+<link href="/plugins/open.files/assets/datatables.min.css" rel="stylesheet">
+<script src="/plugins/open.files/assets/datatables.min.js"></script>
+
+<script src="/plugins/open.files/assets/openfiles.js"></script>
+
+<table id='fileTable' class="stripe compact">
+    <thead>
+        <tr>
+            <th><strong><?= $tr->tr("pid"); ?></strong></th>
+            <th><strong><?= $tr->tr("process"); ?></strong></th>
+            <th><strong><?= $tr->tr("container"); ?></strong></th>
+			<th><strong><?= $tr->tr("kill_process"); ?></strong></th>
+            <th><strong><?= $tr->tr("open"); ?></strong></th>
+            <th><strong><?= $tr->tr("prevent_shutdown"); ?></strong></th>
+			<th><strong><?= $tr->tr("path"); ?></strong></th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <tfoot>
+    </tfoot>
 </table>
 
 <script>
-/* URL for Open Files PHP file. */
-const OFURL = '/plugins/open.files/include/OpenFiles.php';
-
-function refreshPage() {
-	$.post(OFURL, {'action': 'open_files',}, function (data) {
-		if (data) {
-			/* Fill the open files table. */
-			$('#open-files').html(data);
-
-			/* Set up the table sorter. */
-			$('#tblOpenFiles').tablesorter({
-				widthFixed : true,
-				sortList: [[1,0]],
-				widgets: ['stickyHeaders','filter','zebra'],
-				widgetOptions: {
-					// on black and white, offset is height of #menu
-					// on azure and gray, offset is height of #header
-					stickyHeaders_offset: ($('#menu').height() < 50) ? $('#menu').height() : $('#header').height(),
-					filter_columnFilters: true,
-					filter_reset: '.reset',
-					filter_liveSearch: true,
-					zebra: ["normal-row","alt-row"]
-				},
-			});
-		}
-	}, 'json');
-}
-
-refreshPage();
+$(document).ready( async function () {
+    await translator.init();
+    $('#fileTable').DataTable(getDatatableConfig('/plugins/open.files/data.php/files'));
+} );
 </script>
+

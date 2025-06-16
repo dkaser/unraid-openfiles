@@ -18,5 +18,9 @@
     "timed_out_desc": "Cannot get list of open files",
     "yes": "Yes",
     "no": "No",
-    "apply": "Apply"
+    "apply": "Apply",
+    "container": "Container",
+    "more": "More",
+    "less": "Less",
+    "clear_filters": "Clear Filters"
 }
