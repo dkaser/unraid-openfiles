@@ -29,11 +29,11 @@ $prefix = "/plugins/open.files/data.php";
 
 $app = AppFactory::create();
 $app->addRoutingMiddleware();
-$errorMiddleware = $app->addErrorMiddleware(true, true, true);
+$errorMiddleware = $app->addErrorMiddleware(false, true, true);
 
 $app->get("{$prefix}/files", function (Request $request, Response $response, $args) {
     $lsof    = new LSOF();
-    $payload = json_encode($lsof->getProcesses(), JSON_PRETTY_PRINT) ?: "{}";
+    $payload = json_encode($lsof->getProcesses()) ?: "[]";
     $response->getBody()->write($payload);
     return $response->withHeader('Content-Type', 'application/json');
 });
