@@ -48,7 +48,7 @@ class LSOF
         $retval = array();
 
         // cd to /tmp or else lsof itself will show up as working dir on websserver home.
-        $timeout = 30;
+        $timeout   = 30;
         $startTime = microtime(true);
 
         // Build the lsof command with safe argument escaping
@@ -62,12 +62,11 @@ class LSOF
 
         $time = microtime(true) - $startTime;
 
-        $cwd = false;
+        $cwd            = false;
+        $currentProcess = null;
 
         if ($time < $timeout) {
             $res1 = isset($res) ? explode("\n", $res ?: "") : array();
-
-            $currentProcess = null;
 
             foreach ($res1 as $stg) {
                 $c   = substr($stg, 0, 1);
