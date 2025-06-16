@@ -53,6 +53,11 @@ class Process
         }
     }
 
+    public function hasFiles(): bool
+    {
+        return count($this->files) > 0;
+    }
+
     public function addFile(string $file): void
     {
         $this->files[] = $file;

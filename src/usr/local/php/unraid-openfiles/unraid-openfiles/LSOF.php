@@ -111,6 +111,11 @@ class LSOF
             }
         }
 
+        // Add the last process from the loop
+        if ($currentProcess !== null && $currentProcess->hasFiles()) {
+            $retval[] = $currentProcess->toArray();
+        }
+
         return $retval;
     }
 }
