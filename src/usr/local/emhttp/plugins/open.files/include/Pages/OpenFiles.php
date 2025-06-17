@@ -23,7 +23,7 @@ $tr = $tr ?? new Translator(PLUGIN_ROOT);
 ?>
 <script src="/plugins/open.files/assets/translate.js"></script>
 <script>
-    const translator = new Translator("/plugins/open.files/");
+    const translator = new Translator("/plugins/open.files");
 </script>
 
 <link type="text/css" rel="stylesheet" href="/plugins/open.files/assets/style.css">
