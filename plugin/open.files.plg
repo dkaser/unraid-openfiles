@@ -4,7 +4,7 @@
 <PLUGIN 
   name="open.files"
   author="Derek Kaser"
-  version="2025.07.28"
+  version="2025.08.02"
   launch="Tools/OpenFiles"
   pluginURL="https://raw.githubusercontent.com/dkaser/unraid-openfiles/main/plugin/open.files.plg"
   support="https://forums.unraid.net/topic/191179-plugin-open-files-see-whats-preventing-unraid-from-shutting-down/"
@@ -14,16 +14,16 @@
 
 <CHANGES>
 <![CDATA[
-###2025.07.28###
-- Add log files to enhanced log viewer
+###2025.08.02###
+- fix: style for Unraid 7.2
 
 For older releases, see https://github.com/dkaser/unraid-openfiles/releases
 ]]>
 </CHANGES>
 
-<FILE Name="/boot/config/plugins/open.files/unraid-openfiles-2025.07.28-noarch-1.txz">
-<URL>https://github.com/dkaser/unraid-openfiles/releases/download/2025.07.28/unraid-openfiles-2025.07.28-noarch-1.txz</URL>
-<SHA256>beef99c57ba4110f45b119f49c3a23c73a430ec7ae4a21a6be0f812560efcf97</SHA256>
+<FILE Name="/boot/config/plugins/open.files/unraid-openfiles-2025.08.02-noarch-1.txz">
+<URL>https://github.com/dkaser/unraid-openfiles/releases/download/2025.08.02/unraid-openfiles-2025.08.02-noarch-1.txz</URL>
+<SHA256>2627051e78bdd122e6bd50ff4a9d0be56a4380c01a2600961b5ec8e03397b20c</SHA256>
 </FILE>
 
 <!--
@@ -32,17 +32,17 @@ The 'install' script.
 <FILE Run="/bin/bash">
 <INLINE>
 <![CDATA[
-upgradepkg --install-new /boot/config/plugins/open.files/unraid-openfiles-2025.07.28-noarch-1.txz
+upgradepkg --install-new /boot/config/plugins/open.files/unraid-openfiles-2025.08.02-noarch-1.txz
 
 # cleanup old versions
-rm -f $(ls /boot/config/plugins/open.files/unraid-openfiles-*.txz 2>/dev/null | grep -v '2025.07.28')
+rm -f $(ls /boot/config/plugins/open.files/unraid-openfiles-*.txz 2>/dev/null | grep -v '2025.08.02')
 
-echo "VERSION=2025.07.28" > /usr/local/emhttp/plugins/open.files/version.ini
+echo "VERSION=2025.08.02" > /usr/local/emhttp/plugins/open.files/version.ini
 
 echo ""
 echo "----------------------------------------------------"
 echo " open.files has been installed."
-echo " Version: 2025.07.28"
+echo " Version: 2025.08.02"
 echo "----------------------------------------------------"
 echo ""
 ]]>
