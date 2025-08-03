@@ -29,10 +29,6 @@ div.flatpickr-calendar {
     font-size: 1.2rem;
 }
 
-div.dtcc-dropdown * {
-    color: black
-}
-
 span.dtcc-button-icon svg {
     color: white;
     background-color: gray;
@@ -50,4 +46,8 @@ input.flatpickr-input {
 .overflow-anywhere {
     overflow-wrap: anywhere;
     white-space: normal;
+}
+
+div.dt-length {
+    white-space: pre;
 }
