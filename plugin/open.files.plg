@@ -4,7 +4,7 @@
 <PLUGIN 
   name="open.files"
   author="Derek Kaser"
-  version="2025.08.15"
+  version="2025.10.21.0219"
   launch="Tools/OpenFiles"
   pluginURL="https://raw.githubusercontent.com/dkaser/unraid-openfiles/main/plugin/open.files.plg"
   support="https://forums.unraid.net/topic/191179-plugin-open-files-see-whats-preventing-unraid-from-shutting-down/"
@@ -14,16 +14,19 @@
 
 <CHANGES>
 <![CDATA[
-###2025.08.15###
-- Update name in README
+###2025.10.21.0219###
+### 🐛 Bug Fixes
+
+- Clean up buffer on error ([#4](https://github.com/dkaser/unraid-openfiles/pull/4))
+
 
 For older releases, see https://github.com/dkaser/unraid-openfiles/releases
 ]]>
 </CHANGES>
 
-<FILE Name="/boot/config/plugins/open.files/unraid-openfiles-2025.08.15-noarch-1.txz">
-<URL>https://github.com/dkaser/unraid-openfiles/releases/download/2025.08.15/unraid-openfiles-2025.08.15-noarch-1.txz</URL>
-<SHA256>5915c441918d2db8ea87dd5c62953e5213624460edd8e549240d00db3ea21b15</SHA256>
+<FILE Name="/boot/config/plugins/open.files/unraid-openfiles-2025.10.21.0219-noarch-1.txz">
+<URL>https://github.com/dkaser/unraid-openfiles/releases/download/2025.10.21.0219/unraid-openfiles-2025.10.21.0219-noarch-1.txz</URL>
+<SHA256>3bc1220ec59c0fea3861c09ce5edbf1067ffa592dc176f6cffe6d8e00f81a4bc</SHA256>
 </FILE>
 
 <!--
@@ -32,17 +35,17 @@ The 'install' script.
 <FILE Run="/bin/bash">
 <INLINE>
 <![CDATA[
-upgradepkg --install-new /boot/config/plugins/open.files/unraid-openfiles-2025.08.15-noarch-1.txz
+upgradepkg --install-new /boot/config/plugins/open.files/unraid-openfiles-2025.10.21.0219-noarch-1.txz
 
 # cleanup old versions
-rm -f $(ls /boot/config/plugins/open.files/unraid-openfiles-*.txz 2>/dev/null | grep -v '2025.08.15')
+rm -f $(ls /boot/config/plugins/open.files/unraid-openfiles-*.txz 2>/dev/null | grep -v '2025.10.21.0219')
 
-echo "VERSION=2025.08.15" > /usr/local/emhttp/plugins/open.files/version.ini
+echo "VERSION=2025.10.21.0219" > /usr/local/emhttp/plugins/open.files/version.ini
 
 echo ""
 echo "----------------------------------------------------"
 echo " open.files has been installed."
-echo " Version: 2025.08.15"
+echo " Version: 2025.10.21.0219"
 echo "----------------------------------------------------"
 echo ""
 ]]>
