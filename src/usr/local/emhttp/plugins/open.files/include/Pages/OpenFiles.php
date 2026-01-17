@@ -3,6 +3,7 @@
 namespace EDACerton\OpenFiles;
 
 use EDACerton\PluginUtils\Translator;
+use EDACerton\PluginUtils\Utils;
 
 /*
     Copyright (C) 2025  Derek Kaser
@@ -25,7 +26,8 @@ if ( ! defined(__NAMESPACE__ . '\PLUGIN_ROOT') || ! defined(__NAMESPACE__ . '\PL
     throw new \RuntimeException("Common file not loaded.");
 }
 
-$tr = $tr ?? new Translator(PLUGIN_ROOT);
+$tr    = $tr       ?? new Translator(PLUGIN_ROOT);
+$utils = $utils ?? new Utils(PLUGIN_NAME);
 
 // Fix for black theme in Unraid 7.1 and earlier
 $vars = parse_ini_file('/usr/local/emhttp/state/var.ini');
@@ -62,6 +64,8 @@ if (version_compare($vars['version'] ?? "", '7.1', '<=')) {
     <tfoot>
     </tfoot>
 </table>
+
+<?= $utils->getLicenseBlock(); ?>
 
 <script>
 $(document).ready( async function () {
